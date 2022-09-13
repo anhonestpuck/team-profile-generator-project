@@ -135,8 +135,8 @@ function generateHtml() {
      
      <body class="row">
      
-         <header class="jumbotron text-center bg-primary text-white font-weight-bold col-12">
-             <h1 class="display-4">Team Profile</h1>
+         <header class="jumbotron text-center bg-$red-700text-white font-weight-bold col-12">
+             <h1 class="display-4">Squad</h1>
          </header>
      
          <main class="container justify-content-center row col-12">`;
@@ -163,7 +163,7 @@ function generateHtml() {
          } else if (member.role === 'Intern') {
              htmlMember = `
              <div class="card col-3 pl-0 pr-0 mt-4 mx-3 shadow bg-body rounded" style="min-width:18rem; max-width:18rem">
-             <div class="bg-success">
+             <div class="bg-primary">
                  <h5 class="card-title ml-4 mt-3 mb-3 text-white">${member.getName()}</h5>
                  <h6 class="card-subtitle mb-3 ml-4 text-white"><i class="fa fa-user-graduate"></i>  Intern</h6>
              </div>
@@ -201,6 +201,7 @@ function generateHtml() {
  
      return newArr.join('');
  };
+ //I couldn't decide what bootstrap to use so I got some suggestions for the layout because I wasn't particular about it.  
 function renderHtml() {
     fs.writeFile('team.html', generateHtml(), 'utf-8', (err) => {
         err ? console.log(err) : console.log('File Updated, Great Success!!')
