@@ -144,8 +144,8 @@ function generateHtml() {
  
      for (let member of teamMembers) {
          let htmlMember = '';
-         
-         if (member.jobRole === 'manager') {
+         console.log(member)
+         if (member.role === 'manager') {
              htmlMember = `
          <div class="card col-3 pl-0 pr-0 mt-4 mx-3 shadow bg-body rounded" style="min-width:18rem; max-width:18rem">
              <div class="bg-success">
@@ -160,7 +160,7 @@ function generateHtml() {
                  </ul>
              </div>
          </div>`
-         } else if (member.jobRole === 'Intern') {
+         } else if (member.role === 'Intern') {
              htmlMember = `
              <div class="card col-3 pl-0 pr-0 mt-4 mx-3 shadow bg-body rounded" style="min-width:18rem; max-width:18rem">
              <div class="bg-success">
