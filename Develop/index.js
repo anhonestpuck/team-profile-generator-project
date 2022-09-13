@@ -32,7 +32,7 @@ function managerInfo () {
             message: 'please enter your office number'
         }
     ]).then((response => {
-        const mgr = new Manager(response.mgrName, response.mgrId, response.mgrEmail, response.mgrOffice);
+        const mgr = new Manager(response.mgrName, response.mgrId, response.mgrEmail, response.officeNumber);
         teamMembers.push(mgr);
         completeForm();
     }));
@@ -144,7 +144,7 @@ function generateHtml() {
  
      for (let member of teamMembers) {
          let htmlMember = '';
-         console.log(member)
+         
          if (member.role === 'manager') {
              htmlMember = `
          <div class="card col-3 pl-0 pr-0 mt-4 mx-3 shadow bg-body rounded" style="min-width:18rem; max-width:18rem">
@@ -203,6 +203,6 @@ function generateHtml() {
  };
 function renderHtml() {
     fs.writeFile('team.html', generateHtml(), 'utf-8', (err) => {
-        err ? console.log(err) : console.log('File successfully created! Great Work.')
+        err ? console.log(err) : console.log('File Updated, Great Success!!')
     });
 }
